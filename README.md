@@ -1,5 +1,5 @@
 # Aplikace GVP Intranet pro Android
-[App icon](app/src/main/ic_launcher-web.png)
+![App icon](app/src/main/ic_launcher-web.png)
 
 Aplikace pro Android k Intranetu GVP.  
 - OS: Android 5.0+
