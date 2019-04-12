@@ -7,6 +7,7 @@ Aplikace pro Android k Intranetu GVP.
 - Autor: František Hlinka
 
 # Popis
+Aplikaci jsem vytvořil jako svůj maturitní projekt z programování, ale protože by někomu mohla ještě být třeba užitečná, udělal jsem z ní open-source, takže kdyby kdokoli chtěl příspívat, může :) .
 Cílem projektu je vytvořit aplikaci pro mobilní operační systém Android, ve které si uživatel bude moci číst články a aktuality z Intranetu školy. 
 Články bude možné zobrazovat, komentovat a vytvářet. Aktuality bude možné zobrazovat a přidávat. 
 V aplikaci se snažím používat nejnovější (k r. 2019) architektury, paradigmata a knihovny napsané či používané lídry v oboru, například samotným Googlem. Zmíním například Dagger2 pro Dependency Injection, Android Architecture Components z nástrojů Android Jetpack pro implementaci architektury MVVM (Model, View, ViewModel), Room database pro správu databází, Retrofit pro práci se sítí. 
