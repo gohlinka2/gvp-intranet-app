@@ -1,5 +1,5 @@
 # Aplikace GVP Intranet pro Android
-[app/src/main/ic_launcher-web.png]
+[App icon](app/src/main/ic_launcher-web.png)
 
 Aplikace pro Android k Intranetu GVP.  
 - OS: Android 5.0+
@@ -22,7 +22,7 @@ Projekt je možné otevřít například v Android Studio nebo v Eclipse.
 # Changelog
 ### v6, 2.1 release, 12.4.2019 
 Initial commit na github. Doplněna dokumentace kódu.
-### Pre-github changelog:_
+### Pre-github changelog:
 ##### v6, 2.1 release, 1.4.2019
 Opravena chyba v zobrazování obrázků, přidána sekce o aplikaci a s ní informace o licencích.
 ##### v5, 2.0, 31.3.2019
@@ -40,4 +40,4 @@ TODO: Data paging, komentáře ke článkům, přidávání článků a aktualit
 Zatím vůbec nefunguje, padá při startu, ale pracuju na tom. 
 Nechtěl jsem to odfláknout a učím se na tom nové věci (dependency injection, MVVP architecture), kterým ještě moc nerozumím, proto zatím nic.
 Ale už je tam aspoň základní struktura tříd aplikace.
-Až to půjde tak sem hodím update._
+Až to půjde tak sem hodím update.
