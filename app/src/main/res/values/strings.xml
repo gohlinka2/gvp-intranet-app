@@ -1,0 +1,253 @@
+<resources>
+    <string name="app_name">GVP Intranet</string>
+    <string name="error">Chyba</string>
+    <string name="close">Zavřít</string>
+    <string name="an_error_occurred_please_try_again_later">Vyskytla se chyba, zkuste to prosím později.</string>
+    <string name="articles">Články</string>
+    <string name="events">Aktuality</string>
+    <string name="data_not_saved">Data nejsou uložena</string>
+    <string name="downloading_data">Stahování dat…</string>
+    <string name="finished">Hotovo</string>
+    <string name="error_try_later">Chyba. Zkuste to později.</string>
+    <string name="structure_error">Chyba stránky. Zkuste to později.</string>
+    <string name="no_connection">Žádné připojení</string>
+    <string name="article_detail">Detail článku</string>
+    <string name="comments">Komentáře</string>
+    <string name="loading">Načítání…</string>
+    <string name="no_comments">Žádné komentáře</string>
+    <string name="comments_not_updated_no_internet">Žádné připojení, komentáře se neaktualizovaly.</string>
+    <string name="comments_not_updated_error">Chyba při stahování, komentáře se neaktualizovaly.</string>
+    <string name="comment">Komentář</string>
+    <string name="name_surname">Jméno a příjmení</string>
+    <string name="relation_to_gvp">Vztah k GVP</string>
+    <string name="relation_helper_text">Například student, absolvent, rodič, pozorovatel…</string>
+    <string name="relation_preference_summary">Zobrazí se u přidaných komentářů. Například student, absolvent, rodič, pozorovatel…</string>
+    <string name="comment_helper_text">Napište váš komentář</string>
+    <string name="name_helper_text">Zobrazí se u komentáře</string>
+    <string name="email_helper_text">Pouze pro redakci, nezobrazí se u komentáře.</string>
+    <string name="email">Email</string>
+    <string name="add_comment">Přidat komentář</string>
+    <string name="fill_in_this_field">Prosím vyplňte toto pole</string>
+    <string name="fill_in_at_least_one_of_these_fields">Prosím vyplňte aspoň jedno z těchto polí.</string>
+    <string name="field_must_not_be_empty">Pole nesmí být prázdné</string>
+    <string name="enter_valid_email">Zadejte platný email</string>
+    <string name="data_for_posting">Údaje k přidávání příspěvků</string>
+    <string name="name_preference_summary">Zobrazí se u přidaných komentářů a článků</string>
+    <string name="settings">Nastavení</string>
+    <string name="pref_key_name" translatable="false">name</string>
+    <string name="pref_key_email" translatable="false">email</string>
+    <string name="pref_key_relation" translatable="false">relation</string>
+    <string name="set_data_for_posting_to_post">Aby jste mohli přidávat komentáře, články a aktuality, je potřeba nejdříve v nastavení zadat vaše jméno, email a vztah ke škole.</string>
+    <string name="comment_posted_waiting_for_approval">Komentář byl odeslán a čeká na schválení redakcí.</string>
+    <string name="article_posted_waiting_for_approval">Článek byl odeslán a čeká na schválení redakcí.</string>
+    <string name="event_posted_waiting_for_approval">Aktualita byla odeslána a čeká na schválení redakcí.</string>
+    <string name="failed_posting_comment_error">Komentář se nepodařilo přidat. Zkuste to později.</string>
+    <string name="failed_posting_comment_no_internet">Žádné připojení, komentář se nepodařilo přidat. Zkuste to později.</string>
+    <string name="failed_posting_article_error">Článek se nepodařilo přidat. Zkuste to později.</string>
+    <string name="failed_posting_article_no_internet">Žádné připojení, článek se nepodařilo přidat. Zkuste to později.</string>
+    <string name="failed_posting_event_error">Aktualitu se nepodařilo přidat. Zkuste to později.</string>
+    <string name="failed_posting_event_no_internet">Žádné připojení, aktualitu se nepodařilo přidat. Zkuste to později.</string>
+    <string name="nadpis">Nadpis</string>
+    <string name="article_publish_process_disclaimer">Článek bude publikován až po schválení redakcí, proto se nemusí objevit hned.</string>
+    <string name="event_publish_process_disclaimer">Aktualita bude publikována až po schválení redakcí, proto se nemusí objevit hned.</string>
+    <string name="note">Poznámka (nepovinné)</string>
+    <string name="note_helper_text">Poznámka pouze pro redakci, nezobrazí se u článku. Ve většině případů by poznámka neměla být potřeba.</string>
+    <string name="article_content">Obsah článku</string>
+    <string name="article_content_helper_text">Hlavní obsah článku. Zobrazí se až po rozkliknutí detailu článku.</string>
+    <string name="article_description">Popis článku</string>
+    <string name="article_description_helper_text">Krátký popis článku. Zobrazí se pod nadpisem v seznamu článků. Měl by motivovat čtenáře k zobrazení obsahu článku a měl by být formátován jako jeden odstavec.</string>
+    <string name="article_title_helper_text">Nadpis článku</string>
+    <string name="event_title_helper_text">Nadpis aktuality</string>
+    <string name="send">Odeslat</string>
+    <string name="add_article">Přidat článek</string>
+    <string name="event_description">Obsah aktuality</string>
+    <string name="set_user_data_first">Nejdříve vyplňte údaje</string>
+    <string name="open_settings">Otevřít nastavení</string>
+    <string name="add_event">Přidat aktualitu</string>
+    <string name="app_info">Informace aplikaci</string>
+    <string name="send_mail_to_developer_summary">Našli jste chybu, nebo máte nápad na vylepšení? Klikněte sem nebo pošlete email na gohlinka2@gmail.com.</string>
+    <string name="send_mail_to_developer">Poslat email vývojáři</string>
+    <string name="author">Autor</string>
+    <string name="author_name" translatable="false">František Hlinka</string>
+    <string name="license_info">Informace o licencích</string>
+    <string name="license_info_summary">Informace o licencích použitých knihoven</string>
+    <string name="pref_key_send_email" translatable="false">sendEmail</string>
+    <string name="pref_key_licence_info" translatable="false">licenceInfo</string>
+    <string name="author_email" translatable="false">gohlinka2@gmail.com</string>
+    <string name="support_email_subject" translatable="false">[GVPIntranet a0pp]</string>
+    <string name="libraries_licences" translatable="false">
+        Android, AppCompat Library, Android Jetpack\n
+Copyright 2018 The Android Open Source Project\n
+\n
+Licensed under the Apache License, Version 2.0 (the "License");\n
+you may not use this file except in compliance with the License.\n
+You may obtain a copy of the License at\n
+\n
+   http://www.apache.org/licenses/LICENSE-2.0\n
+\n
+Unless required by applicable law or agreed to in writing, software\n
+distributed under the License is distributed on an "AS IS" BASIS,\n
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n
+See the License for the specific language governing permissions and\n
+limitations under the License.\n
+______________________\n
+\n
+MaterialProgressBar\n
+Copyright 2015 Hai Zhang\n
+\n
+Licensed under the Apache License, Version 2.0 (the "License");\n
+you may not use this file except in compliance with the License.\n
+You may obtain a copy of the License at\n
+\n
+   http://www.apache.org/licenses/LICENSE-2.0\n
+\n
+Unless required by applicable law or agreed to in writing, software\n
+distributed under the License is distributed on an "AS IS" BASIS,\n
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n
+See the License for the specific language governing permissions and\n
+limitations under the License.\n
+______________________\n
+\n
+Retrofit\n
+Copyright 2013 Square, Inc\n
+\n
+Licensed under the Apache License, Version 2.0 (the "License");\n
+you may not use this file except in compliance with the License.\n
+You may obtain a copy of the License at\n
+\n
+   http://www.apache.org/licenses/LICENSE-2.0\n
+\n
+Unless required by applicable law or agreed to in writing, software\n
+distributed under the License is distributed on an "AS IS" BASIS,\n
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n
+See the License for the specific language governing permissions and\n
+limitations under the License.\n
+______________________\n
+\n
+Dagger2\n
+Copyright 2012 The Dagger Authors\n
+\n
+Licensed under the Apache License, Version 2.0 (the "License");\n
+you may not use this file except in compliance with the License.\n
+You may obtain a copy of the License at\n
+\n
+   http://www.apache.org/licenses/LICENSE-2.0\n
+\n
+Unless required by applicable law or agreed to in writing, software\n
+distributed under the License is distributed on an "AS IS" BASIS,\n
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n
+See the License for the specific language governing permissions and\n
+limitations under the License.\n
+______________________\n
+\n
+Jsoup\n
+Copyright © 2009 - 2017 Jonathan Hedley (jonathan@hedley.net)\n
+\n
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n
+\n
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n
+\n
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n
+______________________\n
+\n
+EVERYTHING ELSE BELOW THIS LINE REFERS TO THE GLIDE LIBRARY\n
+______________________\n
+\n
+License for everything not in third_party and not otherwise marked:\n
+\n
+Copyright 2014 Google, Inc. All rights reserved.\n
+\n
+Redistribution and use in source and binary forms, with or without modification, are\n
+permitted provided that the following conditions are met:\n
+\n
+   1. Redistributions of source code must retain the above copyright notice, this list of\n
+         conditions and the following disclaimer.\n
+\n
+   2. Redistributions in binary form must reproduce the above copyright notice, this list\n
+         of conditions and the following disclaimer in the documentation and/or other materials\n
+         provided with the distribution.\n
+\n
+THIS SOFTWARE IS PROVIDED BY GOOGLE, INC. \`\`AS IS\'\' AND ANY EXPRESS OR IMPLIED\n
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND\n
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL GOOGLE, INC. OR\n
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\n
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\n
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF\n
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n
+\n
+The views and conclusions contained in the software and documentation are those of the\n
+authors and should not be interpreted as representing official policies, either expressed\n
+or implied, of Google, Inc.\n
+---------------------------------------------------------------------------------------------\n
+License for third_party/disklrucache:\n
+\n
+Copyright 2012 Jake Wharton\n
+Copyright 2011 The Android Open Source Project\n
+\n
+Licensed under the Apache License, Version 2.0 (the "License");\n
+you may not use this file except in compliance with the License.\n
+You may obtain a copy of the License at\n
+\n
+   http://www.apache.org/licenses/LICENSE-2.0\n
+\n
+Unless required by applicable law or agreed to in writing, software\n
+distributed under the License is distributed on an "AS IS" BASIS,\n
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n
+See the License for the specific language governing permissions and\n
+limitations under the License.\n
+---------------------------------------------------------------------------------------------\n
+License for third_party/gif_decoder:\n
+\n
+Copyright © 2013 Xcellent Creations, Inc.\n
+\n
+Permission is hereby granted, free of charge, to any person obtaining\n
+a copy of this software and associated documentation files (the\n
+"Software"), to deal in the Software without restriction, including\n
+without limitation the rights to use, copy, modify, merge, publish,\n
+distribute, sublicense, and/or sell copies of the Software, and to\n
+permit persons to whom the Software is furnished to do so, subject to\n
+the following conditions:\n
+\n
+The above copyright notice and this permission notice shall be\n
+included in all copies or substantial portions of the Software.\n
+\n
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,\n
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\n
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\n
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\n
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n
+---------------------------------------------------------------------------------------------\n
+License for third_party/gif_encoder/AnimatedGifEncoder.java and\n
+third_party/gif_encoder/LZWEncoder.java:\n
+\n
+No copyright asserted on the source code of this class. May be used for any\n
+purpose, however, refer to the Unisys LZW patent for restrictions on use of\n
+the associated LZWEncoder class. Please forward any corrections to\n
+kweiner@fmsware.com.\n
+\n
+-----------------------------------------------------------------------------\n
+License for third_party/gif_encoder/NeuQuant.java\n
+\n
+Copyright © 1994 Anthony Dekker\n
+\n
+NEUQUANT Neural-Net quantization algorithm by Anthony Dekker, 1994. See\n
+"Kohonen neural networks for optimal colour quantization" in "Network:\n
+Computation in Neural Systems" Vol. 5 (1994) pp 351-367. for a discussion of\n
+the algorithm.\n
+\n
+Any party obtaining a copy of these files from the author, directly or\n
+indirectly, is granted, free of charge, a full and unrestricted irrevocable,\n
+world-wide, paid up, royalty-free, nonexclusive right and license to deal in\n
+this software and documentation files (the "Software"), including without\n
+limitation the rights to use, copy, modify, merge, publish, distribute,\n
+sublicense, and/or sell copies of the Software, and to permit persons who\n
+receive copies from any such party to do so, with the only requirement being\n
+that this copyright notice remain intact.\n
+\n
+
+    </string>
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+    </style>
+
+    <style name="AppTheme.SplashScreen">
+        <item name="android:windowBackground">@drawable/bg_splash_screen</item>
+    </style>
+
+    <style name="IndeterminateMaterialPBStyle" parent="Widget.MaterialProgressBar.ProgressBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <dimen name="ChipView_padding_left_right">6dp</dimen>
+    <dimen name="ChipView_padding_top_bottom">5dp</dimen>
+
+    <dimen name="dimen_8dp">8dp</dimen>
+
+</resources>

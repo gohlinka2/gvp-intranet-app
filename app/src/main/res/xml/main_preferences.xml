@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="@string/data_for_posting">
+
+        <EditTextPreference
+                android:icon="@drawable/ic_author"
+                android:inputType="textPersonName"
+                android:key="@string/pref_key_name"
+                android:hint="@string/name_surname"
+                android:title="@string/name_surname"
+                android:summary="@string/name_preference_summary"/>
+
+        <EditTextPreference
+                android:icon="@drawable/ic_email"
+                android:inputType="textEmailAddress"
+                android:key="@string/pref_key_email"
+                android:hint="@string/email"
+                android:title="@string/email"
+                android:summary="Nezobrazí se nikde, jen pro redakci"/>
+
+        <EditTextPreference
+                android:icon="@drawable/ic_relation"
+                android:inputType="text"
+                android:key="@string/pref_key_relation"
+                android:hint="@string/relation_to_gvp"
+                android:title="@string/relation_to_gvp"
+                android:summary="@string/relation_preference_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/app_info">
+
+        <Preference
+                android:icon="@drawable/ic_author"
+                android:title="@string/author"
+                android:summary="@string/author_name"/>
+
+        <Preference
+                android:icon="@drawable/ic_email"
+                android:key="@string/pref_key_send_email"
+                android:title="@string/send_mail_to_developer"
+                android:summary="@string/send_mail_to_developer_summary"/>
+
+        <Preference
+                android:icon="@drawable/ic_copyright"
+                android:key="@string/pref_key_licence_info"
+                android:title="@string/license_info"
+                android:summary="@string/license_info_summary"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

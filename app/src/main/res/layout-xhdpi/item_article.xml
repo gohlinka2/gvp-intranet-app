@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:scaleType="centerCrop"
+                android:minHeight="150dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:textColorLink="@color/colorTextSecondaryOnWhite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/loading"
+                    android:maxLines="4"
+                    android:ellipsize="end"
+                    android:id="@+id/title"
+                    android:textSize="25sp"
+                    android:textColor="@color/colorTextPrimaryOnWhite"
+                    app:layout_constraintBottom_toTopOf="@id/description"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!--TODO: fix ellipsize not working correctly-->
+
+            <TextView
+                    android:textColorLink="@color/colorTextSecondaryOnWhite"
+                    android:textColor="@color/colorTextSecondaryOnWhite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="10"
+                    android:ellipsize="marquee"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    app:layout_constraintStart_toStartOf="@+id/title"
+                    android:text="@string/loading"
+                    app:layout_constraintEnd_toEndOf="@+id/title"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/description"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintBottom_toTopOf="@id/horizontalScrollView2"/>
+
+            <HorizontalScrollView
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/description"
+                    android:id="@+id/horizontalScrollView2"
+                    android:scrollbars="none">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <com.google.android.material.chip.Chip
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:id="@+id/author"
+                            android:layout_marginStart="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/loading"
+                            android:textColor="@color/colorTextSecondaryOnWhite"
+                            app:chipIconTint="@color/colorTextSecondaryOnWhite"
+                            app:chipIcon="@drawable/ic_author"/>
+
+                    <com.google.android.material.chip.Chip
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:id="@+id/date"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorTextSecondaryOnWhite"
+                            app:chipIconTint="@color/colorTextSecondaryOnWhite"
+                            android:text="@string/loading"
+                            app:chipIcon="@drawable/ic_time"/>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <View
+                    android:id="@+id/touchTarget"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/horizontalScrollView2"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
