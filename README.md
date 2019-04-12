@@ -1,4 +1,4 @@
-# Aplikace GVP Intranet pto Android
+# Aplikace GVP Intranet pro Android
 Aplikace pro Android k Intranetu GVP. 
 OS: Android 5.0+
 Jazyk: Kotlin
