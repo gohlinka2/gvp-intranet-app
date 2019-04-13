@@ -13,16 +13,16 @@ Cílem projektu je vytvořit aplikaci pro mobilní operační systém Android, v
 
 Články bude možné zobrazovat, komentovat a vytvářet. Aktuality bude možné zobrazovat a přidávat. 
 
-V aplikaci se snažím používat nejnovější (k r. 2019) architektury, paradigmata a knihovny napsané či používané lídry v oboru, například samotným Googlem. Zmíním například Dagger2 pro Dependency Injection, Android Architecture Components z nástrojů Android Jetpack pro implementaci architektury MVVM (Model, View, ViewModel), Room database pro správu databází, Retrofit pro práci se sítí. 
+V aplikaci se snažím používat nejnovější (k r. 2019) architektury, paradigmata a knihovny napsané či používané lídry v oboru, například samotným Googlem. Zmíním například `Dagger2` pro Dependency Injection, `Android Architecture Components` z nástrojů `Android Jetpack` pro implementaci architektury `MVVM` (Model, View, ViewModel), `Room` database pro správu databází, `Retrofit` pro práci se sítí. 
 
 Zároveň by aplikace měla nějak vypadat, a tak se pokusím následovat Material Design Guidelines (https://material.io/) a zároveň přidat trochu svého vlastního grafického nadšení.
 
 Jako backend pro aplikaci budou sloužit jednoduché PHP skripty, které budou umístěné na serveru školy a převedou data z databáze do JSON formátu. 
 
 # Jak projekt spustit a zobrazit kód
-Zkompilované aplikace jsou zde ve složce [releases](releases).
+Aplikaci lze stáhnout zde v záložce [releases](https://github.com/gohlinka2/gvp-intranet-app/releases), u každé verze v sekci `assets` je soubor `APK` pro danou verzi.
 
-APK soubor je potřeba přesunout do zařízení s Androidem a nainstalovat. 
+`APK` soubor je potřeba přesunout do zařízení s Androidem a nainstalovat. 
 
 Je potřeba mít v nastavení zařízení povolenou instalaci z neověřených zdrojů.
 
@@ -47,6 +47,8 @@ limitations under the License.
 Licence pro využité knihovny třetích stran jsou uvedeny v souboru [licences.txt](licenses.txt).
 
 # Changelog
+### v7, 2.1.1 release, 13.4.2019
+První open-source public release na Githubu.
 ### v6, 2.1 release, 12.4.2019 
 Initial commit na github. Doplněna dokumentace kódu.
 ### Pre-github changelog:
