@@ -7,7 +7,7 @@ Aplikace pro Android k Intranetu GVP.
 - Autor: František Hlinka
 
 # Popis
-Aplikaci jsem vytvořil jako svůj maturitní projekt z programování, ale protože by někomu mohla ještě být třeba užitečná, udělal ji open-source, takže kdyby kdokoli chtěl aplikaci používat nebo i příspívat, klidně může :simple_smile: 
+Aplikaci jsem vytvořil jako svůj maturitní projekt z programování, ale protože by někomu mohla ještě být třeba užitečná, udělal ji open-source, takže kdyby kdokoli chtěl aplikaci používat nebo i příspívat, klidně může :wink: 
 
 Cílem projektu je vytvořit aplikaci pro mobilní operační systém Android, ve které si uživatel bude moci číst články a aktuality z Intranetu školy. 
 
