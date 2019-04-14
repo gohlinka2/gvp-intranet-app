@@ -74,7 +74,7 @@
     <string name="pref_key_send_email" translatable="false">sendEmail</string>
     <string name="pref_key_licence_info" translatable="false">licenceInfo</string>
     <string name="author_email" translatable="false">gohlinka2@gmail.com</string>
-    <string name="support_email_subject" translatable="false">[GVPIntranet a0pp]</string>
+    <string name="support_email_subject" translatable="false">[GVPIntranet app]</string>
     <string name="libraries_licences" translatable="false">
         Android, AppCompat Library, Android Jetpack\n
 Copyright 2018 The Android Open Source Project\n
