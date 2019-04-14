@@ -33,6 +33,9 @@ class ArticleNodesParser {
         return resultList
     }
 
+    //TODO: DOESN'T FUCKING WORK, FIX IT
+    //FUCK RECURSION I HATE IT SO MUCH
+
     /**
      * Parses the given Node and all of its children recursively into a list of [ArticleNode]s.
      */
