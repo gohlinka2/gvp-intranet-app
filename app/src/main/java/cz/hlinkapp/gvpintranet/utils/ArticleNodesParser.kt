@@ -28,7 +28,7 @@ class ArticleNodesParser {
         document.empty()
         val doc = Jsoup.parseBodyFragment(text)
         doc.setBaseUri(ServerContract.BASE_URL)
-        parse(doc.body()) //parse the document
+        parse(doc.body(),document) //parse the document
         writeTextPartsToResult() //write remaining text parts from working document to result
         return resultList
     }
@@ -36,16 +36,16 @@ class ArticleNodesParser {
     /**
      * Parses the given Node and all of its children recursively into a list of [ArticleNode]s.
      */
-    private fun parse(nodeToParse : Node) {
+    private fun parse(nodeToParse : Node, parent: Element) {
         val shallowNodeClone = nodeToParse.shallowClone()
-        document.appendChild(shallowNodeClone) //appends this node with no children to the working document
+        parent.appendChild(shallowNodeClone) //appends this node with no children to the parent
         if (shallowNodeClone is Element) for (childNode in nodeToParse.childNodesCopy()) { //for every child, decide what to do:
             if (childNode.childNodeSize() == 0) { //if the child does not have children:
                 if (childNode is Element && childNode.`is`("img")) { //if the child is an image, add text from working document to the result and add the image
                     writeTextPartsToResult()
-                    resultList.add(ImageNode(shallowNodeClone.absUrl("src")))
-                } else shallowNodeClone.appendChild(childNode) //if the child is not an image, append it to the working document (into the parent shallow copy) to be later added to the result
-            } else parse(childNode) //the node has children, parse every child recursively
+                    resultList.add(ImageNode(childNode.absUrl("src"))) //get the image's absolute url and add it to the result list
+                } else shallowNodeClone.appendChild(childNode) //if the child is not an image, append it to the parent shallow copy
+            } else parse(childNode,shallowNodeClone) //the node has children, parse every child recursively
         }
     }
 
