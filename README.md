@@ -17,7 +17,7 @@ V aplikaci se snažím používat nejnovější (k r. 2019) architektury, paradi
 
 Zároveň by aplikace měla nějak vypadat, a tak se pokusím následovat Material Design Guidelines (https://material.io/) a zároveň přidat trochu svého vlastního grafického nadšení.
 
-Jako backend pro aplikaci budou sloužit jednoduché PHP skripty, které budou umístěné na serveru školy a převedou data z databáze do JSON formátu. 
+Jako backend pro aplikaci budou sloužit jednoduché PHP skripty, které budou umístěné na serveru školy a převedou data z databáze do JSON formátu. Backend je zde v repu [gvp-intranet-app-backend](https://github.com/gohlinka2/gvp-intranet-app-backend).
 
 # Jak projekt spustit a zobrazit kód
 Aplikaci lze stáhnout zde v záložce [releases](https://github.com/gohlinka2/gvp-intranet-app/releases), u každé verze v sekci `assets` je soubor `APK` pro danou verzi.
@@ -27,6 +27,9 @@ Aplikaci lze stáhnout zde v záložce [releases](https://github.com/gohlinka2/g
 Je potřeba mít v nastavení zařízení povolenou instalaci z neověřených zdrojů.
 
 Projekt je možné otevřít například v Android Studio nebo v Eclipse.
+
+# Backend
+Kód backendu je v samostatném repu: [gvp-intranet-app-backend](https://github.com/gohlinka2/gvp-intranet-app-backend).
 
 # Licence
 ```
