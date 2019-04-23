@@ -20,11 +20,11 @@ Zároveň by aplikace měla nějak vypadat, a tak se pokusím následovat Materi
 Jako backend pro aplikaci budou sloužit jednoduché PHP skripty, které budou umístěné na serveru školy a převedou data z databáze do JSON formátu. Backend je zde v repu [gvp-intranet-app-backend](https://github.com/gohlinka2/gvp-intranet-app-backend).
 
 # Jak projekt spustit a zobrazit kód
-Aplikaci lze stáhnout zde v záložce [releases](https://github.com/gohlinka2/gvp-intranet-app/releases), u každé verze v sekci `assets` je soubor `APK` pro danou verzi.
+Aplikaci lze stáhnout:
+- Jednoduše z [obchodu Google Play](https://play.google.com/store/apps/details?id=cz.hlinkapp.gvpintranet),
+- nebo zde v záložce [releases](https://github.com/gohlinka2/gvp-intranet-app/releases), u každé verze v sekci `assets` je soubor `APK` pro danou verzi.
 
-`APK` soubor je potřeba přesunout do zařízení s Androidem a nainstalovat. 
-
-Je potřeba mít v nastavení zařízení povolenou instalaci z neověřených zdrojů.
+   `APK` soubor je potřeba přesunout do zařízení s Androidem a nainstalovat. Je potřeba mít v nastavení zařízení povolenou instalaci z neověřených zdrojů.
 
 Projekt je možné otevřít například v Android Studio nebo v Eclipse.
 
