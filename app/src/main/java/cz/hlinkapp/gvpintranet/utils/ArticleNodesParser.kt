@@ -8,6 +8,10 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 import org.jsoup.nodes.Node
+import org.jsoup.select.NodeFilter
+import org.jsoup.select.NodeVisitor
+import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * A utility class for parsing html text into an array of [ArticleNode]s.
@@ -17,38 +21,74 @@ import org.jsoup.nodes.Node
  */
 class ArticleNodesParser {
 
-    private val resultList = ArrayList<ArticleNode>()
-    private val document = Document(ServerContract.BASE_URL)
+    /**
+     * The document with the input html. During parsing, elements already parsed will get removed from the document.
+     */
+    private lateinit var inputDocument : Document
+    /**
+     * The working document. Parsed elements from the [inputDocument] will get copied to this document.
+     * When an image is discovered or the end of [inputDocument] has been reached, this document will get emptied and a [TextNode] with its contents will be added to [resultList].
+     */
+    private lateinit var workingDocument : Document
+    /**
+     * The result ArrayList with the parsed text and image nodes.
+     */
+    private lateinit var resultList : ArrayList<ArticleNode>
 
     /**
      * Parses the given html text to a list of [TextNode]s and [ImageNode]s to be displayed in [cz.hlinkapp.gvpintranet.adapters.ArticleNodesRecyclerAdapter] .
      */
     fun parseText (text: String?) : ArrayList<ArticleNode> {
-        resultList.clear()
-        document.empty()
-        val doc = Jsoup.parseBodyFragment(text)
-        doc.setBaseUri(ServerContract.BASE_URL)
-        parse(doc.body(),document) //parse the document
-        writeTextPartsToResult() //write remaining text parts from working document to result
+        resultList = ArrayList()
+        inputDocument = Jsoup.parseBodyFragment(text,ServerContract.BASE_URL)
+        workingDocument = Document(ServerContract.BASE_URL)
+        generateIDs()
+        parse()
         return resultList
     }
 
-    //TODO: DOESN'T FUCKING WORK, FIX IT
-    //FUCK RECURSION I HATE IT SO MUCH
+    /**
+     * Generates a unique ID for each element in the [inputDocument].
+     * This method MUST be called before calling [parse].
+     */
+    private fun generateIDs() {
+        inputDocument.traverse(object : NodeVisitor {
+            override fun tail(node: Node, depth: Int) {}
+            override fun head(node: Node, depth: Int) {
+                node.attr(ATTR_PARSE_ID,UUID.randomUUID().toString())
+            }
+        })
+    }
 
     /**
-     * Parses the given Node and all of its children recursively into a list of [ArticleNode]s.
+     * Parses the [inputDocument] into an ArrayList of [ArticleNode]s, written to [resultList].
+     * The method [generateIDs] MUST be called after initialising the [inputDocument] and before calling this method.
+     * The [workingDocument] is used as a temporary document needed for the parsing.
      */
-    private fun parse(nodeToParse : Node, parent: Element) {
-        val shallowNodeClone = nodeToParse.shallowClone()
-        parent.appendChild(shallowNodeClone) //appends this node with no children to the parent
-        if (shallowNodeClone is Element) for (childNode in nodeToParse.childNodesCopy()) { //for every child, decide what to do:
-            if (childNode.childNodeSize() == 0) { //if the child does not have children:
-                if (childNode is Element && childNode.`is`("img")) { //if the child is an image, add text from working document to the result and add the image
-                    writeTextPartsToResult()
-                    resultList.add(ImageNode(childNode.absUrl("src"))) //get the image's absolute url and add it to the result list
-                } else shallowNodeClone.appendChild(childNode) //if the child is not an image, append it to the parent shallow copy
-            } else parse(childNode,shallowNodeClone) //the node has children, parse every child recursively
+    private fun parse() {
+        if (inputDocument.childNodeSize() != 0) {
+            inputDocument.filter(object : NodeFilter {
+                override fun tail(node: Node, depth: Int): NodeFilter.FilterResult {
+                    return NodeFilter.FilterResult.REMOVE
+                }
+                override fun head(node: Node, depth: Int): NodeFilter.FilterResult {
+                    return if (node is Element && node.`is`("img")) {
+                        writeTextPartsToResult()
+                        resultList.add(ImageNode(node.absUrl("src"))) //get the image's absolute url and add it to the result list
+                        NodeFilter.FilterResult.STOP //stop this traversal
+                    } else {
+                        val parentId = node.parent()?.attr(ATTR_PARSE_ID) //the id of this node's parent
+                        val workingNodeParent = workingDocument.getElementsByAttributeValue(ATTR_PARSE_ID,parentId).first() //the copy of this node's parent in the workingDocument, or null if not present
+                        //if the copy of this node's parent is present in the workingDocument, add a shallow copy of this node to it, else add it to the root of the workingDocument
+                        if (workingNodeParent != null) workingNodeParent.appendChild(node.shallowClone())
+                        else workingDocument.appendChild(node.shallowClone())
+                        NodeFilter.FilterResult.CONTINUE //continue the traversal
+                    }
+                }
+            })
+            parse() //parse again
+        } else {
+            writeTextPartsToResult()
         }
     }
 
@@ -56,7 +96,12 @@ class ArticleNodesParser {
      * Writes text parts from the working document to the result list. Call before an image is added and after parsing.
      */
     private fun writeTextPartsToResult() {
-        resultList.add(TextNode(document.toString()))
-        document.empty() //clear the working document
+        resultList.add(TextNode(workingDocument.toString()))
+        workingDocument.empty() //clear the working document
     }
+
+    companion object {
+        const val ATTR_PARSE_ID = "parse-ID"
+    }
+
 }
