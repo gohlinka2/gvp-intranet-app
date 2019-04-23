@@ -78,10 +78,13 @@ class ArticleNodesParser {
                     return if (node is Element && node.`is`("img")) { //the element is an image
                         writeTextPartsToResult()
                         resultList.add(ImageNode(node.absUrl("src"))) //get the image's absolute url and add it to the result list
+                        node.remove() //remove the image
                         NodeFilter.FilterResult.STOP //stop this traversal
                     } else { //the element is not an image
                         val parentId = node.parent()?.attr(ATTR_PARSE_ID) //the id of this node's parent
-                        val workingNodeParent = workingDocument.getElementsByAttributeValue(ATTR_PARSE_ID,parentId).first() //the copy of this node's parent in the workingDocument, or null if not present
+                        val workingNodeParent = //the copy of this node's parent in the workingDocument, or null if not present
+                            if (parentId != null && parentId.isNotEmpty()) workingDocument.getElementsByAttributeValue(ATTR_PARSE_ID,parentId).first()
+                            else null
                         //if the copy of this node's parent is present in the workingDocument, add a shallow copy of this node to it, else add it to the root of the workingDocument
                         if (workingNodeParent != null) workingNodeParent.appendChild(node.shallowClone())
                         else workingDocument.appendChild(node.shallowClone())
