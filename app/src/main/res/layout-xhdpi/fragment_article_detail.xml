@@ -26,7 +26,7 @@
                     android:textColor="@color/colorTextPrimaryOnWhite"
                     android:fontFamily="sans-serif-light"
                     android:textSize="30sp"
-                    android:text="Toto je velký nadpis článku na víc řádků"
+                    android:text="@string/loading"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
