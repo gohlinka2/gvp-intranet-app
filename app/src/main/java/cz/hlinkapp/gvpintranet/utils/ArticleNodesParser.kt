@@ -66,17 +66,20 @@ class ArticleNodesParser {
      * The [workingDocument] is used as a temporary document needed for the parsing.
      */
     private fun parse() {
+        //if the inputDocument is not empty, parse it, else write the parsed parsed from the workingDocument to the resultList
         if (inputDocument.childNodeSize() != 0) {
+            //traverse the document tree and decide what to do for each node
             inputDocument.filter(object : NodeFilter {
                 override fun tail(node: Node, depth: Int): NodeFilter.FilterResult {
-                    return NodeFilter.FilterResult.REMOVE
+                    return NodeFilter.FilterResult.REMOVE //remove the ending when it's been already parsed
                 }
+
                 override fun head(node: Node, depth: Int): NodeFilter.FilterResult {
-                    return if (node is Element && node.`is`("img")) {
+                    return if (node is Element && node.`is`("img")) { //the element is an image
                         writeTextPartsToResult()
                         resultList.add(ImageNode(node.absUrl("src"))) //get the image's absolute url and add it to the result list
                         NodeFilter.FilterResult.STOP //stop this traversal
-                    } else {
+                    } else { //the element is not an image
                         val parentId = node.parent()?.attr(ATTR_PARSE_ID) //the id of this node's parent
                         val workingNodeParent = workingDocument.getElementsByAttributeValue(ATTR_PARSE_ID,parentId).first() //the copy of this node's parent in the workingDocument, or null if not present
                         //if the copy of this node's parent is present in the workingDocument, add a shallow copy of this node to it, else add it to the root of the workingDocument
@@ -87,9 +90,7 @@ class ArticleNodesParser {
                 }
             })
             parse() //parse again
-        } else {
-            writeTextPartsToResult()
-        }
+        } else writeTextPartsToResult()
     }
 
     /**
