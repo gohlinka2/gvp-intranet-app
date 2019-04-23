@@ -50,6 +50,8 @@ limitations under the License.
 Licence pro využité knihovny třetích stran jsou uvedeny v souboru [licences.txt](licenses.txt).
 
 # Changelog
+### v8, 2.1.2 release, 23.4.2019
+Oprava chyby v algoritmu pro zobrazování obsahu článku, která způsobovala nesprávné zobrazování textu - bez všeho formátování.
 ### v7, 2.1.1 release, 13.4.2019
 První open-source public release na Githubu.
 ### v6, 2.1 release, 12.4.2019 
