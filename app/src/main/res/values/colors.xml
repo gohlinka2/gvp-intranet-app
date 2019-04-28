@@ -4,10 +4,7 @@
     <color name="colorPrimaryLight">#63a4ff</color>
     <color name="colorPrimaryDark">#004ba0</color>
     <color name="colorAccent">#ff9100</color>
-    <color name="colorAccentLight">#ffc246</color>
-    <color name="colorAccentDark">#c56200</color>
     <color name="colorTextPrimary">#ffffff</color>
-    <color name="colorTextSecondary">#000000</color>
     <color name="colorTextPrimaryOnWhite">#212121</color>
     <color name="colorTextSecondaryOnWhite">#757575</color>
     <color name="colorDivider">#BDBDBD</color>
