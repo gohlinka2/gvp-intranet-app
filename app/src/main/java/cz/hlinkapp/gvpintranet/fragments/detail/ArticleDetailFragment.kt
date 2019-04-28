@@ -73,8 +73,8 @@ class ArticleDetailFragment : BaseFragment() {
         super.onSaveInstanceState(outState)
     }
 
-    override fun initViews() {
-        super.initViews()
+    override fun initViews(savedInstanceState: Bundle?) {
+        super.initViews(savedInstanceState)
         (activity as? AppCompatActivity)?.supportActionBar?.title = getString(R.string.article_detail)
         fab?.setImageResource(R.drawable.ic_add_comment)
 

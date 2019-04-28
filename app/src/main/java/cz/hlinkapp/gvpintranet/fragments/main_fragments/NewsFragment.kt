@@ -45,8 +45,8 @@ class NewsFragment: BaseFragment() {
         viewModel.initNews()
     }
 
-    override fun initViews() {
-        super.initViews()
+    override fun initViews(savedInstanceState: Bundle?) {
+        super.initViews(savedInstanceState)
         dataNotSavedLayout.visibility = View.GONE
         commentsProgressBar.visibility = View.GONE
         recyclerView.setLayoutManagerSafely(LinearLayoutManager(context))

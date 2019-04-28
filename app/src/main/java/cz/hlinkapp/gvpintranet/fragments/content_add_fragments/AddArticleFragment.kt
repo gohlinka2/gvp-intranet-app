@@ -37,8 +37,8 @@ class AddArticleFragment : BaseFragment() {
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(ContentAddViewModel::class.java)
     }
 
-    override fun initViews() {
-        super.initViews()
+    override fun initViews(savedInstanceState: Bundle?) {
+        super.initViews(savedInstanceState)
 
         sendButton.setOnClickListener {if (checkInput()) sendData()}
 
