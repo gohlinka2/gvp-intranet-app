@@ -20,5 +20,8 @@ interface ServerContract {
         const val POST_COMMENT = "postComment.php"
         const val POST_ARTICLE = "postArticle.php"
         const val POST_EVENT = "postEvent.php"
+
+        const val INTRANET_LINK = "http://www.gvp.cz/intranet"
+        const val GITHUB_REPO_LINK = "https://github.com/gohlinka2/gvp-intranet-app"
     }
 }
