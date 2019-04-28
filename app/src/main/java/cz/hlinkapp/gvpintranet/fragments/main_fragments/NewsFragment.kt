@@ -53,6 +53,7 @@ class NewsFragment: BaseFragment() {
         viewModel.news?.observe(this, Observer {
             mAdapter.news = ArrayList(it)
             dataNotSavedLayout.visibility = if (mAdapter.news.isEmpty()) View.VISIBLE else View.GONE
+            recyclerView.scrollToPosition(0)
         })
         viewModel.newsStatus.observe (viewLifecycleOwner, Observer { requestInfo ->
             if (requestInfo.isProcessing()) showStatusLayout(getString(R.string.downloading_data),true)

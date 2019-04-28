@@ -60,7 +60,7 @@ class ArticlesFragment : BaseFragment() {
         recyclerView.adapter = mPagedAdapter
 
         viewModel.pagedArticles?.observe(viewLifecycleOwner, Observer {
-            mPagedAdapter.submitList(it)
+            mPagedAdapter.submitList(it) { recyclerView.scrollToPosition(0) }
             dataNotSavedLayout.visibility = if (it.isEmpty()) VISIBLE else GONE
         })
 
