@@ -39,10 +39,22 @@
                 android:summary="@string/author_name"/>
 
         <Preference
+                android:icon="@drawable/ic_star"
+                android:key="@string/pref_key_rate"
+                android:title="@string/rate_app"
+                android:summary="@string/rate_app_summary"/>
+
+        <Preference
                 android:icon="@drawable/ic_email"
                 android:key="@string/pref_key_send_email"
                 android:title="@string/send_mail_to_developer"
                 android:summary="@string/send_mail_to_developer_summary"/>
+
+        <Preference
+                android:icon="@drawable/ic_github"
+                android:key="@string/pref_key_github"
+                android:title="@string/open_on_github"
+                android:summary="@string/open_on_github_summary"/>
 
         <Preference
                 android:icon="@drawable/ic_copyright"
