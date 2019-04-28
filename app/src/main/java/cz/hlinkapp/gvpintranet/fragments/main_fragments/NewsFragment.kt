@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import cz.hlinkapp.gvpintranet.R
 import cz.hlinkapp.gvpintranet.activities.MainActivity.Companion.STATUS_LAYOUT_HIDE_AFTER_TIME
 import cz.hlinkapp.gvpintranet.adapters.NewsRecyclerAdapter
@@ -14,9 +15,12 @@ import cz.hlinkapp.gvpintranet.config.setLayoutManagerSafely
 import cz.hlinkapp.gvpintranet.data.utils.event_handling.RequestInfo
 import cz.hlinkapp.gvpintranet.di.MyApplication
 import cz.hlinkapp.gvpintranet.fragments.abstraction.BaseFragment
+import cz.hlinkapp.gvpintranet.utils.OnChildScrollListener
 import cz.hlinkapp.gvpintranet.view_models.MainViewModel
 import kotlinx.android.synthetic.main.fragment_news.*
 import javax.inject.Inject
+
+
 
 /**
  * A Fragment for displaying a list of news/events.
@@ -50,6 +54,15 @@ class NewsFragment: BaseFragment() {
         commentsProgressBar.visibility = View.GONE
         recyclerView.setLayoutManagerSafely(LinearLayoutManager(context))
         recyclerView.adapter = mAdapter
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                when {
+                    dy > 1 -> (activity as? OnChildScrollListener)?.onScrollDown()
+                    dy < 1 -> (activity as? OnChildScrollListener)?.onScrollUp()
+                }
+            }
+        })
+
         viewModel.news?.observe(this, Observer {
             mAdapter.news = ArrayList(it)
             dataNotSavedLayout.visibility = if (mAdapter.news.isEmpty()) View.VISIBLE else View.GONE

@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import cz.hlinkapp.gvpintranet.R
 import cz.hlinkapp.gvpintranet.activities.ArticleDetailActivity
 import cz.hlinkapp.gvpintranet.activities.MainActivity.Companion.STATUS_LAYOUT_HIDE_AFTER_TIME
@@ -17,6 +18,7 @@ import cz.hlinkapp.gvpintranet.config.setLayoutManagerSafely
 import cz.hlinkapp.gvpintranet.data.utils.event_handling.RequestInfo
 import cz.hlinkapp.gvpintranet.di.MyApplication
 import cz.hlinkapp.gvpintranet.fragments.abstraction.BaseFragment
+import cz.hlinkapp.gvpintranet.utils.OnChildScrollListener
 import cz.hlinkapp.gvpintranet.view_models.MainViewModel
 import kotlinx.android.synthetic.main.fragment_articles.*
 import javax.inject.Inject
@@ -58,6 +60,14 @@ class ArticlesFragment : BaseFragment() {
         commentsProgressBar.visibility = GONE
         recyclerView.setLayoutManagerSafely(LinearLayoutManager(context))
         recyclerView.adapter = mPagedAdapter
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                when {
+                    dy > 1 -> (activity as? OnChildScrollListener)?.onScrollDown()
+                    dy < 1 -> (activity as? OnChildScrollListener)?.onScrollUp()
+                }
+            }
+        })
 
         viewModel.pagedArticles?.observe(viewLifecycleOwner, Observer {
             mPagedAdapter.submitList(it) { recyclerView.scrollToPosition(0) }
