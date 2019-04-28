@@ -9,7 +9,6 @@
     <string name="downloading_data">Stahování dat…</string>
     <string name="finished">Hotovo</string>
     <string name="error_try_later">Chyba. Zkuste to později.</string>
-    <string name="structure_error">Chyba stránky. Zkuste to později.</string>
     <string name="no_connection">Žádné připojení</string>
     <string name="article_detail">Detail článku</string>
     <string name="comments">Komentáře</string>
@@ -17,14 +16,9 @@
     <string name="no_comments">Žádné komentáře</string>
     <string name="comments_not_updated_no_internet">Žádné připojení, komentáře se neaktualizovaly.</string>
     <string name="comments_not_updated_error">Chyba při stahování, komentáře se neaktualizovaly.</string>
-    <string name="comment">Komentář</string>
     <string name="name_surname">Jméno a příjmení</string>
     <string name="relation_to_gvp">Vztah k GVP</string>
-    <string name="relation_helper_text">Například student, absolvent, rodič, pozorovatel…</string>
     <string name="relation_preference_summary">Zobrazí se u přidaných komentářů. Například student, absolvent, rodič, pozorovatel…</string>
-    <string name="comment_helper_text">Napište váš komentář</string>
-    <string name="name_helper_text">Zobrazí se u komentáře</string>
-    <string name="email_helper_text">Pouze pro redakci, nezobrazí se u komentáře.</string>
     <string name="email">Email</string>
     <string name="add_comment">Přidat komentář</string>
     <string name="fill_in_this_field">Prosím vyplňte toto pole</string>

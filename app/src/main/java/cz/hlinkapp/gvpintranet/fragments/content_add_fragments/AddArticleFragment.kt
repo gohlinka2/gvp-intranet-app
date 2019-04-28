@@ -30,15 +30,14 @@ class AddArticleFragment : BaseFragment() {
     @Inject
     lateinit var mSharedPrefUtil : SharedPrefUtil
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun initDependencies(savedInstanceState: Bundle?) {
+        super.initDependencies(savedInstanceState)
         (activity?.applicationContext as? MyApplication)?.getApplicationComponent()?.inject(this)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(ContentAddViewModel::class.java)
     }
 
-    override fun initViews() {
-        super.initViews()
+    override fun initViews(savedInstanceState: Bundle?) {
+        super.initViews(savedInstanceState)
 
         sendButton.setOnClickListener {if (checkInput()) sendData()}
 

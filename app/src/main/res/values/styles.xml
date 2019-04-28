@@ -19,9 +19,6 @@
         <item name="android:indeterminate">true</item>
     </style>
 
-    <dimen name="ChipView_padding_left_right">6dp</dimen>
-    <dimen name="ChipView_padding_top_bottom">5dp</dimen>
-
     <dimen name="dimen_8dp">8dp</dimen>
 
 </resources>

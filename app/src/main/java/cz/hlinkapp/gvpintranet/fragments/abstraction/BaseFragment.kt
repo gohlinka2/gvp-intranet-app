@@ -20,15 +20,29 @@ abstract class BaseFragment : androidx.fragment.app.Fragment() {
         return inflater.inflate(layoutId,container,false)
     }
 
-    override fun onStart() {
-        super.onStart()
-        initViews()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initDependencies(savedInstanceState)
+        initViews(savedInstanceState)
     }
 
     /**
-     * The child fragments should initialize their views in this method. This will get called automatically in [onStart] of the Fragment.
+     * Child fragments should initialize their views in this method. This will get called automatically in [onActivityCreated] of the Fragment.
+     *
+     * @param savedInstanceState If the fragment is being re-created from
+     * a previous saved state, this is the state.
      */
-    protected open fun initViews() {}
+    protected open fun initViews(savedInstanceState: Bundle?) {}
+
+    /**
+     * Child fragments should initialize their primary dependencies, such as the ViewModel, in this method.
+     * This is also the appropriate place to put Dagger injection.
+     * This is called automatically in [onActivityCreated] of the Fragment, but before [initViews], so that you can use the initialised dependencies for your views.
+     *
+     * @param savedInstanceState If the fragment is being re-created from
+     * a previous saved state, this is the state.
+     */
+    protected open fun initDependencies(savedInstanceState: Bundle?) {}
 
     @get:LayoutRes
     protected abstract val layoutId : Int

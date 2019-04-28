@@ -5,15 +5,26 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayout
 import cz.hlinkapp.gvpintranet.R
 import cz.hlinkapp.gvpintranet.adapters.MainViewPagerAdapter
 import cz.hlinkapp.gvpintranet.di.MyApplication
+import cz.hlinkapp.gvpintranet.utils.OnChildScrollListener
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * The main activity, containing the ViewPager with the two main fragments, [cz.hlinkapp.gvpintranet.fragments.main_fragments.ArticlesFragment] and [cz.hlinkapp.gvpintranet.fragments.main_fragments.NewsFragment].
+ * To ensure correct behavior of the FAB, child Fragments should use the [OnChildScrollListener] interface to let the Activity know of nested scroll events.
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnChildScrollListener {
+
+    override fun onScrollUp() {
+        fab?.show()
+    }
+
+    override fun onScrollDown() {
+        fab?.hide()
+    }
 
     private val mAdapter = lazy {
         MainViewPagerAdapter(supportFragmentManager, listOf(getString(R.string.articles),getString(R.string.events)))
@@ -44,12 +55,17 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         viewPager.adapter = mAdapter.value
         tabLayout.setupWithViewPager(viewPager)
+        tabLayout.addOnTabSelectedListener(object: TabLayout.ViewPagerOnTabSelectedListener(viewPager) {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                super.onTabSelected(tab)
+                fab?.show() //show the fab when the tab has just changed
+            }
+        })
         fab.setOnClickListener {
             when (viewPager.currentItem) {
                 0 -> startActivity(Intent(this@MainActivity,AddArticleActivity::class.java))
                 1 -> startActivity(Intent(this@MainActivity,AddEventActivity::class.java))
             }
-
         }
     }
 
