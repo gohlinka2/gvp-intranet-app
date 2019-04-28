@@ -50,6 +50,8 @@ limitations under the License.
 Licence pro využité knihovny třetích stran jsou uvedeny v souboru [licences.txt](licenses.txt).
 
 # Changelog
+### v9, 2.2, 28.4.2019
+Optimalizováno, kdy se načítají data (při otevření detailu článku a návratu zpět na seznam článků teď seznam neskáče vždy nepohodlně na vrch, jako tomu bylo předtím). Opravy chyb. Plovoucí tlačítko pro přidávání příspěvků teď nepřekáží, ale samo se schovává a objevuje při posouvání obsahu. Přidáno pár odkazů v nastavení. Přidána rychlá zkratka pro otevření Intranetu v prohlížeči.
 ### v8, 2.1.2 release, 23.4.2019
 Oprava chyby v algoritmu pro zobrazování obsahu článku, která způsobovala nesprávné zobrazování textu - bez všeho formátování.
 ### v7, 2.1.1 release, 13.4.2019
