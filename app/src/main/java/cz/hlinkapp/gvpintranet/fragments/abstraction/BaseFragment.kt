@@ -20,15 +20,18 @@ abstract class BaseFragment : androidx.fragment.app.Fragment() {
         return inflater.inflate(layoutId,container,false)
     }
 
-    override fun onStart() {
-        super.onStart()
-        initViews()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initViews(savedInstanceState)
     }
 
     /**
-     * The child fragments should initialize their views in this method. This will get called automatically in [onStart] of the Fragment.
+     * The child fragments should initialize their views in this method. This will get called automatically in [onActivityCreated] of the Fragment.
+     *
+     * @param savedInstanceState If the fragment is being re-created from
+     * a previous saved state, this is the state.
      */
-    protected open fun initViews() {}
+    protected open fun initViews(savedInstanceState: Bundle?) {}
 
     @get:LayoutRes
     protected abstract val layoutId : Int
