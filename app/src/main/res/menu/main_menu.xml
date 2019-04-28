@@ -7,4 +7,9 @@
             android:id="@+id/settings"
             app:showAsAction="never"/>
 
+    <item
+            android:title="@string/open_in_browser"
+            android:id="@+id/open_in_browser"
+            app:showAsAction="never"/>
+
 </menu>

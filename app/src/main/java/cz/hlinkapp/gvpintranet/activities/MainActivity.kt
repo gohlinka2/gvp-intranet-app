@@ -1,6 +1,7 @@
 package cz.hlinkapp.gvpintranet.activities
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import cz.hlinkapp.gvpintranet.R
 import cz.hlinkapp.gvpintranet.adapters.MainViewPagerAdapter
+import cz.hlinkapp.gvpintranet.contracts.ServerContract
 import cz.hlinkapp.gvpintranet.di.MyApplication
 import cz.hlinkapp.gvpintranet.utils.OnChildScrollListener
 import kotlinx.android.synthetic.main.activity_main.*
@@ -47,6 +49,10 @@ class MainActivity : AppCompatActivity(), OnChildScrollListener {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean = when (item?.itemId) {
         R.id.settings -> {
             startActivity(Intent(this@MainActivity,SettingsActivity::class.java))
+            true
+        }
+        R.id.open_in_browser -> {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(ServerContract.INTRANET_LINK)))
             true
         }
         else -> super.onOptionsItemSelected(item)
