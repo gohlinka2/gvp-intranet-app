@@ -44,9 +44,8 @@ class ArticlesFragment : BaseFragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun initDependencies(savedInstanceState: Bundle?) {
+        super.initDependencies(savedInstanceState)
         (activity?.applicationContext as? MyApplication)?.getApplicationComponent()?.inject(this)
 
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)

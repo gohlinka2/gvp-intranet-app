@@ -54,8 +54,13 @@ class ArticleDetailFragment : BaseFragment() {
     private val mDescriptionAdapter = ArticleNodesRecyclerAdapter().apply { textSize = 17f }
     private val mContentAdapter = ArticleNodesRecyclerAdapter().apply { textSize = 16f }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(KEY_ARTICLE_ID,mArticleId)
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun initDependencies(savedInstanceState: Bundle?) {
+        super.initDependencies(savedInstanceState)
 
         val fromSavedInstanceState = savedInstanceState?.getInt(KEY_ARTICLE_ID,-1) ?: -1
         val fromExtras = activity?.intent?.getIntExtra(KEY_ARTICLE_ID,-1) ?: -1
@@ -66,11 +71,6 @@ class ArticleDetailFragment : BaseFragment() {
 
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(ArticleDetailViewModel::class.java)
         viewModel.init(mArticleId)
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        outState.putInt(KEY_ARTICLE_ID,mArticleId)
-        super.onSaveInstanceState(outState)
     }
 
     override fun initViews(savedInstanceState: Bundle?) {
