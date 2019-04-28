@@ -244,4 +244,11 @@ that this copyright notice remain intact.\n
 \n
 
     </string>
+    <string name="pref_key_github">github</string>
+    <string name="pref_key_rate">rate</string>
+    <string name="rate_app">Ohodnotit aplikaci</string>
+    <string name="rate_app_summary">Pokud se vám aplikace líbí, můžete ji ohodnotit na Google Play</string>
+    <string name="open_on_github">Zobrazit projekt na GitHubu</string>
+    <string name="open_on_github_summary">Aplikace je open-source. Klikněte zde pro zobrazení kódu</string>
+    <string name="open_in_browser">Otevřít v prohlížeči</string>
 </resources>
